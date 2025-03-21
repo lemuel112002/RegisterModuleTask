@@ -1,80 +1,178 @@
 body {
     background-color: #4E73DF;
-  }
-  
-.container {
-    max-width: 900px;
 }
-  
+
+.container {
+    max-width: 100%; /* Full width for responsiveness */
+    margin: auto; /* Center the container */
+    padding: 15px; /* Add some padding */
+}
+
 .logo-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-  
+
 .card {
-    border-radius: 10px;
+    border-radius: 5px;
     background: white;
+    padding: 20px; /* Add padding for better spacing */
 }
-  
+
 h4 {
     font-weight: bold;
+    text-align: center; /* Center the title */
 }
-  
+
 .btn {
-    width: 150px;
+    width: 100%; /* Make buttons full width */
+    max-width: 150px; /* Limit max width */
 }
-  
+
 a {
     text-decoration: none;
     color: #007bff;
 }
-  
+
 /* Stepper Navigation */
 .stepper-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%; /* Full width */
+    padding: 20px 0; /* Padding for top and bottom */
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space out the steps evenly */
+    position: relative; /* Position relative for absolute children */
 }
-  
+
 .step-wrapper {
+    position: relative; /* Position relative to align lines */
+    flex: 1; /* Allow equal spacing */
     display: flex;
-    align-items: center;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items */
 }
-  
+
 .step-circle {
-    width: 40px;
+    width: 40px; /* Circle size */
     height: 40px;
-    border-radius: 50%;
-    background-color: #ddd;
+    font-size: 16px; /* Font size */
+    background-color: #ddd; /* Default background */
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    font-size: 18px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color 0.3s;
     color: black;
+    border-radius: 50%; /* Ensure circles are round */
+    z-index: 2; /* Ensure circles are above the lines */
 }
-  
+
 .step-circle.active {
-    background-color: #007bff;
-    color: #fff;
+    background-color: #007bff; /* Active color */
+    color: #fff; /* Active text color */
+    border: 2px solid #007bff; /* Border for active state */
 }
-  
+
 .step-circle:hover {
-    background-color: #0056b3;
-    color: white;
+    background-color: #0056b3; /* Hover color */
+    color: white; /* Hover text color */
 }
-  
+
 .line {
-    width: 40px;
-    height: 4px;
-    background-color: #ddd;
-    transition: 0.3s;
+    width: 100%; /* Full width line */
+    height: 4px; /* Line height */
+    background-color: lightgray; /* Default line color light gray */
+    position: absolute; /* Position absolute to align with circles */
+    top: 20px; /* Adjust as needed */
+    left: 9em; /* Align to the left side */
+    transition: background-color 0.6s; /* Smooth transition */
 }
-  
+
 .line.active {
-    background-color: #007bff;
+    background-color: #007bff; /* Active line color blue */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .step-circle {
+        width: 35px; /* Smaller circles on medium screens */
+        height: 35px;
+        font-size: 15px; /* Smaller font size */
+    }
+
+    .line {
+        height: 4px; /* Smaller lines on medium screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .step-circle {
+        width: 30px; /* Smaller circles on small screens */
+        height: 30px;
+        font-size: 14px; /* Smaller font size */
+    }
+
+    .line {
+        height: 3px; /* Smaller lines on small screens */
+    }
+
+    .btn {
+        max-width: 100%; /* Full width buttons on small screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px; /* Less padding on smaller screens */
+    }
+
+    .card {
+        padding: 15px; /* Less padding for card on smaller screens */
+    }
+
+    h4 {
+        font-size: 18px; /* Smaller title font size */
+    }
+
+    .form-label {
+        font-size: 14px; /* Smaller label font size */
+    }
+
+    .form-control, .form-select {
+        font-size: 14px; /* Smaller input/select font size */
+    }
+
+    .form-check-label {
+        font-size: 14px; /* Smaller checkbox label font size */
+    }
+}
+
+@media (max-width: 576px) {
+    .btn {
+        max-width: 100%; /* Full width buttons on extra small screens */
+    }
+
+    .step-circle {
+        width: 25px; /* Even smaller circles on extra small screens */
+        height: 25px;
+        font-size: 12px; /* Smaller font size */
+    }
+
+    .line {
+        height: 2px; /* Smaller lines on extra small screens */
+    }
+
+    .form-label {
+        font-size: 12px; /* Smaller label font size */
+    }
+
+    .form-control, .form-select {
+        font-size: 12px; /* Smaller input/select font size */
+    }
+
+    h4 {
+        font-size: 16px; /* Smaller title font size */
+    }
 }
